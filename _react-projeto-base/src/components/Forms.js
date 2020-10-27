@@ -1,4 +1,5 @@
 import React from 'react';
+import css from './Installments/Installments.module.css';
 
 export default function Forms({
   onChangeInitialValue,
@@ -23,27 +24,31 @@ export default function Forms({
     onChangeInstallmentsValue(newInstallment);
   };
   return (
-    <div>
-      <input
-        placeholder="0"
-        type="number"
-        //value={filter}
-        onChange={handleInitialValueChange}
-      />
-
-      <input
-        placeholder="0"
-        type="number"
-        //value={filter}
-        onChange={handleInterestRateChange}
-      />
-
-      <input
-        placeholder="0"
-        type="number"
-        //value={filter}
-        onChange={handleInstallmentsChange}
-      />
+    <div className={css.input}>
+      <div>
+        <input
+          placeholder="0"
+          type="number"
+          //value={filter}
+          onChange={handleInitialValueChange}
+        />
+      </div>
+      <div>
+        <input
+          placeholder="0"
+          type="number"
+          //value={filter}
+          onChange={handleInterestRateChange}
+        />
+      </div>
+      <div>
+        <input
+          placeholder="0"
+          type="number"
+          //value={filter}
+          onChange={handleInstallmentsChange}
+        />
+      </div>
     </div>
   );
 }

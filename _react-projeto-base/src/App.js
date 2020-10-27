@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Forms from './components/Forms';
 import Installments from './components/Installments/Installments';
+import css from './components/Installments/Installments.module.css';
 
 export default function App() {
   const [initialValue, setInitialValue] = useState(0);
@@ -19,7 +20,6 @@ export default function App() {
     };
     InterestCalc();
     //setFinalValue(newValue);
-    console.log('valor ' + newValue);
   }, [initialValue, interestRate, installments]);
 
   const getInitialValue = (value) => {
@@ -36,17 +36,17 @@ export default function App() {
 
   return (
     <div>
-      Juros Compostos
-      <Forms
-        onChangeInitialValue={getInitialValue}
-        onChangeInterestRateValue={getRate}
-        onChangeInstallmentsValue={getInstallments}
-      />
-      <Installments
-        initialValue={initialValue}
-        installments={installments}
-        finalValue={finalValue}
-      />
+      <h1 className={css.header}>Juros Compostos</h1>
+      <div className={css.forms}>
+        <Forms
+          onChangeInitialValue={getInitialValue}
+          onChangeInterestRateValue={getRate}
+          onChangeInstallmentsValue={getInstallments}
+        />
+      </div>
+      <div>
+        <Installments initialValue={initialValue} finalValue={finalValue} />
+      </div>
     </div>
   );
 }
