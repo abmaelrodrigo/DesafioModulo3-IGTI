@@ -1,1 +1,1 @@
-web: yarn start
+web: cd jurosComposto && yarn start
